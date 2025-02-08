@@ -1,0 +1,52 @@
+[
+    {
+        "relativelink" : "Adventure-Works-Project/refs/heads/main/DataSets/AdventureWorks_Product_Categories.csv",
+        "foldername" : "AdventureWorks_Product_Categories",
+        "filename" : "AdventureWorks_Product_Categories.csv"
+    },
+    {
+        "relativelink" : "Adventure-Works-Project/refs/heads/main/DataSets/AdventureWorks_Calendar.csv",
+        "foldername" : "AdventureWorks_Calendar",
+        "filename" : "AdventureWorks_Calendar.csv"
+    },
+    {
+        "relativelink" : "Adventure-Works-Project/refs/heads/main/DataSets/AdventureWorks_Customers.csv",
+        "foldername" : "AdventureWorks_Customers",
+        "filename" : "AdventureWorks_Customers.csv"
+    },
+    {
+        "relativelink" : "Adventure-Works-Project/refs/heads/main/DataSets/AdventureWorks_Product_Subcategories.csv",
+        "foldername" : "Product_Subcategories",
+        "filename" : "AdventureWorks_Product_Subcategories.csv"
+    },
+    {
+        "relativelink" : "Adventure-Works-Project/refs/heads/main/DataSets/AdventureWorks_Products.csv",
+        "foldername" : "AdventureWorks_Products",
+        "filename" : "AdventureWorks_Products.csv"
+    },
+    {
+        "relativelink" : "Adventure-Works-Project/refs/heads/main/DataSets/AdventureWorks_Returns.csv",
+        "foldername" : "AdventureWorks_Returns",
+        "filename":"AdventureWorks_Returns.csv"
+    },
+    {
+        "relativelink" : "Adventure-Works-Project/refs/heads/main/DataSets/AdventureWorks_Sales_2015.csv",
+        "foldername" : "AdventureWorks_Sales_2015",
+        "filename" : "AdventureWorks_Sales_2015.csv"
+    },
+    {
+        "relativelink" : "Adventure-Works-Project/refs/heads/main/DataSets/AdventureWorks_Sales_2016.csv",
+        "foldername" : "AdventureWorks_Sales_2016",
+        "filename" : "AdventureWorks_Sales_2016.cvsv"
+    },
+    {
+        "relativelink" : "Adventure-Works-Project/refs/heads/main/DataSets/AdventureWorks_Sales_2017.csv",
+        "foldername" : "AdventureWorks_Sales_2017",
+        "filename" : "AdventureWorks_Sales_2017.csv"
+    },
+    {
+        "relativelink" : "Adventure-Works-Project/refs/heads/main/DataSets/AdventureWorks_Territories.csv",
+        "foldername" : "AdventureWorks_Territories",
+        "filename" : "AdventureWorks_Territories.csv"
+    }
+]
