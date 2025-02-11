@@ -91,3 +91,115 @@ FROM
 select * from Aw_Customers
 
 
+-- creating master Key
+CREATE MASTER KEY ENCRYPTION BY PASSWORD='Password needs to add'
+
+--Creating the ecternal data source and file formate
+
+
+CREATE DATABASE SCOPED CREDENTIAL Udaybhuvi
+WITH
+    IDENTITY = 'Managed Identity'
+    
+CREATE EXTERNAL DATA SOURCE source_silver
+WITH(
+    LOCATION = 'https://adventureprojectuday.dfs.core.windows.net/silver',
+    CREDENTIAL = Udaybhuvi  -- Referencing the previously created credential
+);
+
+CREATE EXTERNAL DATA SOURCE Gold_silver
+WITH(
+    LOCATION = 'https://adventureprojectuday.dfs.core.windows.net/gold',
+    CREDENTIAL = Udaybhuvi
+)
+
+CREATE EXTERNAL FILE FORMAT format_parquet
+WITH(
+    FORMAT_TYPE = PARQUET,
+    DATA_COMPRESSION ='org.apache.hadoop.io.compress.SnappyCodec'
+)
+
+-- creating external tables for Calender
+
+CREATE EXTERNAL TABLE extcalendar
+WITH(
+    LOCATION = 'Extcalendar',
+    DATA_SOURCE = source_Gold,
+    FILE_FORMAT = format_parquet
+) AS 
+SELECT * FROM [Adventure_works].[Aw_Calendar];
+
+-- reading from external table
+
+
+select * from extcalendar
+
+-- creating external tables for customers
+
+CREATE EXTERNAL TABLE extcustomers
+WITH(
+    LOCATION = 'Extcustomers',
+    DATA_SOURCE = source_Gold,
+    FILE_FORMAT = format_parquet
+) AS 
+SELECT * FROM Adventure_works.Aw_Customers;
+
+-- creating external tables for product categories
+
+CREATE EXTERNAL TABLE extpcategories
+WITH(
+    LOCATION = 'Extpcategories',
+    DATA_SOURCE = source_Gold,
+    FILE_FORMAT = format_parquet
+) AS 
+SELECT * FROM Adventure_works.Aw_Product_Categories;
+
+-- creating external tables for product sub categories
+
+CREATE EXTERNAL TABLE extpsubcategories
+WITH(
+    LOCATION = 'Extpsubcategories',
+    DATA_SOURCE = source_Gold,
+    FILE_FORMAT = format_parquet
+) AS 
+SELECT * FROM Adventure_works.Aw_Product_Subcategories;
+
+-- creating external tables for products
+
+CREATE EXTERNAL TABLE extproducts
+WITH(
+    LOCATION = 'Extproducts',
+    DATA_SOURCE = source_Gold,
+    FILE_FORMAT = format_parquet
+) AS 
+SELECT * FROM Adventure_works.Aw_Products;
+
+-- creating external tables for returns
+
+CREATE EXTERNAL TABLE extreturns
+WITH(
+    LOCATION = 'Extreturns',
+    DATA_SOURCE = source_Gold,
+    FILE_FORMAT = format_parquet
+) AS 
+SELECT * FROM Adventure_works.Aw_Returns;
+
+-- creating external tables for sales
+
+CREATE EXTERNAL TABLE extsales
+WITH(
+    LOCATION = 'Exsales',
+    DATA_SOURCE = source_Gold,
+    FILE_FORMAT = format_parquet
+) AS 
+SELECT * FROM Adventure_works.Aw_Sales;
+
+-- creating external tables for Territories
+
+CREATE EXTERNAL TABLE extTerritories
+WITH(
+    LOCATION = 'ExtTerritories',
+    DATA_SOURCE = source_Gold,
+    FILE_FORMAT = format_parquet
+) AS 
+SELECT * FROM Adventure_works.Aw_Territories;
