@@ -1,0 +1,93 @@
+
+--Creating  view for Aw_Calendar_df
+CREATE VIEW Aw_Calendar
+AS
+SELECT
+     *
+FROM
+    OPENROWSET(
+        BULK 'https://adventureprojectuday.dfs.core.windows.net/silver/Aw_Calendar_df',
+        FORMAT = 'PARQUET'
+    ) AS result1
+
+--Creating  view for Aw_Customers
+CREATE VIEW Aw_Customers
+AS
+SELECT
+     *
+FROM
+    OPENROWSET(
+        BULK 'https://adventureprojectuday.dfs.core.windows.net/silver/Aw_Customers_df',
+        FORMAT = 'PARQUET'
+    ) AS result1
+
+--Creating  view for Aw_Product_Categories
+CREATE VIEW Aw_Product_Categories
+AS
+SELECT
+     *
+FROM
+    OPENROWSET(
+        BULK 'https://adventureprojectuday.dfs.core.windows.net/silver/Aw_Product_Categories_df',
+        FORMAT = 'PARQUET'
+    ) AS result1
+
+--Creating  view for Aw_Product_Subcategories
+CREATE VIEW Aw_Product_Subcategories
+AS
+SELECT
+     *
+FROM
+    OPENROWSET(
+        BULK 'https://adventureprojectuday.dfs.core.windows.net/silver/Aw_Product_Subcategories_df',
+        FORMAT = 'PARQUET'
+    ) AS result1
+
+--Creating  view for Aw_Products
+CREATE VIEW Aw_Products
+AS
+SELECT
+     *
+FROM
+    OPENROWSET(
+        BULK 'https://adventureprojectuday.dfs.core.windows.net/silver/Aw_Products_df',
+        FORMAT = 'PARQUET'
+    ) AS result1
+
+--Creating  view for Aw_Returns
+CREATE VIEW Aw_Returns
+AS
+SELECT
+     *
+FROM
+    OPENROWSET(
+        BULK 'https://adventureprojectuday.dfs.core.windows.net/silver/Aw_Returns_df',
+        FORMAT = 'PARQUET'
+    ) AS result1
+
+--Creating  view for Aw_Sales
+CREATE VIEW Aw_Sales
+AS
+SELECT
+     *
+FROM
+    OPENROWSET(
+        BULK 'https://adventureprojectuday.dfs.core.windows.net/silver/Aw_Sales_df',
+        FORMAT = 'PARQUET'
+    ) AS result1
+
+--Creating  view for Aw_Territories
+CREATE VIEW Aw_Territories
+AS
+SELECT
+     *
+FROM
+    OPENROWSET(
+        BULK 'https://adventureprojectuday.dfs.core.windows.net/silver/Aw_Territories_df',
+        FORMAT = 'PARQUET'
+    ) AS result1
+
+---Reading Customer view
+select * from Aw_Customers
+
+
